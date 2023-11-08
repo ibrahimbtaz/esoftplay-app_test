@@ -15,16 +15,51 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.domain",
+      "buildNumber": "1",
+      "supportsTablet": true,
+      "associatedDomains": [
+        "applinks:*.domain.com",
+        "applinks:domain.com"
+      ],
+      "infoPlist": {
+        "LSApplicationQueriesSchemes": [
+          "itms-apps"
+        ]
+      }
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "package": "com.domain",
+      "versionCode": 1,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "http",
+            "host": "*.domain.com"
+          },
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        },
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "http",
+            "host": "domain.com"
+          },
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "runtimeVersion": "1",
+    "jsEngine": "hermes"
   }
 }
